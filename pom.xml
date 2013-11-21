@@ -1,37 +1,41 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.isi.bmkeg</groupId>
-  <artifactId>bmkeg-parent</artifactId>
-  <version>1.1.4-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>bmkeg-parent</name>
-  
-  	<properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.isi.bmkeg</groupId>
+	<artifactId>bmkeg-parent</artifactId>
+	<version>1.1.4</version>
+	<packaging>pom</packaging>
+	<name>bmkeg-parent</name>
 
+	<properties>
 		<spring.version>3.1.2.RELEASE</spring.version>
 		<slf4j.version>1.6.1</slf4j.version>
 		<spring-ws.version>2.0.0.RELEASE</spring-ws.version>
 		<spring-flex.version>1.5.2.RELEASE</spring-flex.version>
 		<blazeds.version>4.0.0.14931</blazeds.version>
-    	<flexmojos.version>4.2-beta</flexmojos.version>
-	  	<flex.version>4.5.0.20967</flex.version>
-        
+		<flexmojos.version>4.2-beta</flexmojos.version>
+		<flex.version>4.5.0.20967</flex.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 	</properties>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 
 	<build>
 		<pluginManagement>
 			<plugins>
 				<plugin>
-			        <groupId>org.apache.maven.plugins</groupId>
-			        <artifactId>maven-compiler-plugin</artifactId>
-			        <version>2.3.2</version>
-			        <configuration>
-			          <source>1.6</source>
-			          <target>1.6</target>
-			        </configuration>
-      			</plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -47,23 +51,60 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/BMKEG/bmkeg-parent</url>
+		<connection>https://github.com/BMKEG/bmkeg-parent</connection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>GullyAPCBurns</id>
+			<name>Gully APC Burns</name>
+			<email>GullyBurns@gmail.com</email>
+		</developer>
+		<developer>
+			<id>marcelotallis</id>
+			<name>Marcelo Tallis</name>
+			<email>marcelotallis@gmail.cm</email>
+		</developer>
+	</developers>
+
 	<repositories>
 
-			<!-- There are two versions of Spring artifacts that are hosted 
-		in two different places: the Enterprise Bundle 
-		Repository (EBR) maintained by SpringSource and Maven Central. The 
-		Spring artifacts in one repository are different from the other, they
-		follow a different naming scheme (group name is appended to artifact name)
-	 	and shouldn't be mixed with the artifacts 
-		from the other repository. The artifacts in EBR are OSGi compatible and undergo
-		extensive QA performed by the Spring team. If using the Spring artifacts from
-		EBR then all dependencies like Hibernate and slf4j should also be obtained from EBR.
-		EBR artifacts can be searched at: http://www.springsource.com/repository.
-		Maven Central Artifacts	can be searched at: http://search.maven.org.
-		 -->
+		<!-- There are two versions of Spring artifacts that are hosted in two 
+			different places: the Enterprise Bundle Repository (EBR) maintained by SpringSource 
+			and Maven Central. The Spring artifacts in one repository are different from 
+			the other, they follow a different naming scheme (group name is appended 
+			to artifact name) and shouldn't be mixed with the artifacts from the other 
+			repository. The artifacts in EBR are OSGi compatible and undergo extensive 
+			QA performed by the Spring team. If using the Spring artifacts from EBR then 
+			all dependencies like Hibernate and slf4j should also be obtained from EBR. 
+			EBR artifacts can be searched at: http://www.springsource.com/repository. 
+			Maven Central Artifacts can be searched at: http://search.maven.org. -->
 
 		<repository>
 			<id>com.springsource.repository.bundles.release</id>
@@ -86,13 +127,23 @@
 			<url>http://repository.springsource.com/maven/bundles/snapshot</url>
 		</repository>
 
-		<!-- Our local repository -->
+		<!-- JBoss Repository -->
 
 		<repository>
-			<id>hugin</id>
-			<name>hugin public repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/groups/public/</url>
+			<id>org.jboss.repository.releases</id>
+			<name>JBoss Repository - Releases</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
 		</repository>
+
+		<!-- JSI Repository on SourceForge -->
+
+		<repository>
+			<id>jsi.sourceforge.net</id>
+			<name>sourceforge jsi repository</name>
+			<url>http://sourceforge.net/projects/jsi/files/m2_repo</url>
+		</repository>
+
+		<!-- BMKEG local repository at hugin.isi.edu -->
 
 		<repository>
 			<id>hugin-snapshots</id>
@@ -105,105 +156,71 @@
 			<name>Hugin ISI MRP repository RELEASES</name>
 			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
 		</repository>
-
-		<repository>
-			<id>hugin-3rd-party</id>
-			<name>Hugin Third Party Nexus Repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
-		</repository> 
-
-		<repository>
-			<id>hugin-3rd-party-snapshot</id>
-			<name>Hugin Third Party Nexus Repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdpartysnapshots/</url>
-		</repository> 
-
- 		<repository>   
-			<id>maven-central</id>   
-			<name>maven</name>
-			<url>http://central.maven.org/maven2/</url>
-		</repository>
+             
+        <repository>
+        	<id>hugin-3rd-party</id>
+            <name>Hugin Third Party Nexus Repository</name>
+            <url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
+        </repository> 
 
 	</repositories>
-  
-    <pluginRepositories>
-    <pluginRepository>
-      <id>flex-mojos-repository</id>
-      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
-	  <releases> 
-		<enabled>true</enabled> 
-	  </releases>
-      <snapshots> 
-		<enabled>true</enabled>
-	  </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-        <id>flexpmd.opensource.adobe</id>
-	    <releases>
-	        <enabled>true</enabled>
-    	    </releases>
-	    <snapshots>
-	        <enabled>false</enabled>
-	    </snapshots>
-	    <name>FlexPMD repository on opensource.adobe.com</name>
-	    <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>	
-    </pluginRepository>
 
-  </pluginRepositories>
-  
-  	<distributionManagement>
-		<repository>
-			<id>hugin-releases</id>
-			<name>hugin releases</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>hugin-snapshots</id>
-			<name>Hugin ISI MRP repository SNAPSHOTS</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
-		</snapshotRepository>
-	</distributionManagement>
-  
-  	<dependencyManagement>
-  	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>flex-mojos-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>flexpmd.opensource.adobe</id>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<name>FlexPMD repository on opensource.adobe.com</name>
+			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencyManagement>
+
 		<dependencies>
-		
-			<!-- 
-			
-				BMKEG			
-			
-			-->
-			
+
+			<!-- BMKEG -->
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>bmkeg-utils</artifactId>
 				<version>1.1.4-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>uml</artifactId>
 				<version>1.1.4-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfCore</artifactId>
 				<version>1.1.4-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfGenerator</artifactId>
 				<version>1.1.4-SNAPSHOT</version>
 			</dependency>
 
-			<!-- 
-			
-				ooevv, kefed, cosi			
-			
-			-->
-			
+			<!-- ooevv, kefed, cosi -->
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>ooevv</artifactId>
@@ -211,25 +228,25 @@
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
-			
+
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>ooevv-jpa</artifactId>
-			  <version>0.0.9-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>ooevv-jpa</artifactId>
+				<version>0.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>ooevv-services</artifactId>
-			  <version>0.0.9-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>ooevv-services</artifactId>
+				<version>0.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>ooevvDao</artifactId>
-			  <version>0.0.10-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>ooevvDao</artifactId>
+				<version>0.0.10-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>kefed</artifactId>
@@ -237,25 +254,25 @@
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
-			
+
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>kefed-jpa</artifactId>
-			  <version>0.0.3-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>kefed-jpa</artifactId>
+				<version>0.0.3-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>kefed-services</artifactId>
-			  <version>0.0.3-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>kefed-services</artifactId>
+				<version>0.0.3-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>kefedDao</artifactId>
-			  <version>0.0.4-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>kefedDao</artifactId>
+				<version>0.0.4-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>cosi</artifactId>
@@ -263,36 +280,32 @@
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
-			
+
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>cosi-jpa</artifactId>
-			  <version>0.0.1-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>cosi-jpa</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>cosi-services</artifactId>
-			  <version>0.0.1-SNAPSHOT</version>
-			</dependency>			
-		
-			<!-- 
-			
-				lapdftext, diglib, skm			
-			
-			-->
-			
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>cosi-services</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- lapdftext, diglib, skm -->
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>lapdftext</artifactId>
-				<version>1.7.3-SNAPSHOT</version>			
+				<version>1.7.3-SNAPSHOT</version>
 			</dependency>
-	
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>lapdftextVpdmf</artifactId>
 				<version>1.1.4-SNAPSHOT</version>
-			</dependency>	
+			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
@@ -306,8 +319,8 @@
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>ftd-jpa</artifactId>
 				<version>1.1.3-SNAPSHOT</version>
-			</dependency>	
-			
+			</dependency>
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>digitalLibrary</artifactId>
@@ -315,17 +328,17 @@
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
-			
+
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>digitalLibrary-jpa</artifactId>
-			  <version>1.1.3-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>digitalLibrary-jpa</artifactId>
+				<version>1.1.3-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-			  <groupId>edu.isi.bmkeg</groupId>
-			  <artifactId>digitalLibrary-services</artifactId>
-			  <version>1.1.3-SNAPSHOT</version>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>digitalLibrary-services</artifactId>
+				<version>1.1.3-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
@@ -341,7 +354,7 @@
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>triage-jpa</artifactId>
@@ -353,7 +366,7 @@
 				<artifactId>triage-services</artifactId>
 				<version>1.1.3-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>skmCore</artifactId>
@@ -365,7 +378,7 @@
 				<artifactId>skmTriage</artifactId>
 				<version>1.1.3-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>triageClientApp</artifactId>
@@ -394,18 +407,14 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-			
-			<!-- 
-			
-				Spring
-			
-			-->
+
+			<!-- Spring -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
@@ -417,19 +426,19 @@
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
@@ -459,26 +468,22 @@
 				<artifactId>spring-security-taglibs</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
-			
-			
-			<!-- 
-			
-				Spring Flex
-				
-			 -->
-			
+
+
+			<!-- Spring Flex -->
+
 			<dependency>
 				<groupId>org.springframework.flex</groupId>
 				<artifactId>spring-flex-core</artifactId>
 				<version>${spring-flex.version}</version>
 			</dependency>
-			
+
 			<!-- BlazeDS -->
 
 			<dependency>
@@ -496,9 +501,9 @@
 				<artifactId>blazeds-remoting</artifactId>
 				<version>${blazeds.version}</version>
 			</dependency>
-	
 
-						<!-- MySQL JDBC Connector -->
+
+			<!-- MySQL JDBC Connector -->
 			<dependency>
 				<groupId>com.mysql.jdbc</groupId>
 				<artifactId>com.springsource.com.mysql.jdbc</artifactId>
@@ -512,39 +517,35 @@
 					</exclusion>
 				</exclusions>
 			</dependency>
-	
+
 			<!-- JPA Persistence -->
 			<dependency>
-			  <groupId>org.hibernate.javax.persistence</groupId>
-			  <artifactId>hibernate-jpa-2.0-api</artifactId>
-			  <version>1.0.1.Final</version>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>1.0.1.Final</version>
 			</dependency>
-	
+
 			<!-- Hibernate JPA Provider -->
 			<dependency>
-			    <groupId>org.hibernate</groupId>
-			    <artifactId>hibernate-annotations</artifactId>
-			    <version>3.5.6-Final</version>
-			</dependency>		
-			
-			<!-- 
-			
-				UIMA
-			
-			 -->
-			
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<version>3.5.6-Final</version>
+			</dependency>
+
+			<!-- UIMA -->
+
 			<dependency>
 				<groupId>org.apache.uima</groupId>
 				<artifactId>uimaj-tools</artifactId>
 				<version>2.4.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.uima</groupId>
 				<artifactId>uimaj-adapter-vinci</artifactId>
 				<version>2.4.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.uima</groupId>
 				<artifactId>uimaj-cpe</artifactId>
@@ -555,25 +556,20 @@
 				<artifactId>uimaj-document-annotation</artifactId>
 				<version>2.4.0</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.uimafit</groupId>
 				<artifactId>uimafit</artifactId>
 				<version>1.4.0</version>
 			</dependency>
-			
-		  	<!-- 
-		  		Cleartk dependency management.
-		  		
-		  		This are taken from the cleartk-release artifact.
-		  		
-		  		The cleartk documentation asks that cleartk-release 
-		  		dependency management be imported into the project poms by
-		  		adding cleartk-release as a dependency with scope: import and 
-		  		omitting version information for all other cleartk dependencies
-		  		added to the pom. Unfortunately, eclipse doesn't handle the import
-		  		of dependency management so we copied them into our parent pom. 
-		  	 -->
+
+			<!-- Cleartk dependency management. This are taken from the cleartk-release 
+				artifact. The cleartk documentation asks that cleartk-release dependency 
+				management be imported into the project poms by adding cleartk-release as 
+				a dependency with scope: import and omitting version information for all 
+				other cleartk dependencies added to the pom. Unfortunately, eclipse doesn't 
+				handle the import of dependency management so we copied them into our parent 
+				pom. -->
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-type-system</artifactId>
@@ -704,34 +700,30 @@
 				<artifactId>cleartk-examples</artifactId>
 				<version>0.6.3</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>1.3.2</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>3.1</version>
 			</dependency>
-			
+
 		</dependencies>
-  	
-  	</dependencyManagement>
-  	
-  	<dependencies>
-		<!-- 
-		
-			JUnit
-		
-		-->
+
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-  	</dependencies>
+	</dependencies>
 </project>
