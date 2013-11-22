@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.isi.bmkeg</groupId>
 	<artifactId>bmkeg-parent</artifactId>
@@ -136,12 +137,12 @@
 			<name>Hugin ISI MRP repository RELEASES</name>
 			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
 		</repository>
-             
-        <repository>
-        	<id>hugin-3rd-party</id>
-            <name>Hugin Third Party Nexus Repository</name>
-            <url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
-        </repository> 
+
+		<repository>
+			<id>hugin-3rd-party</id>
+			<name>Hugin Third Party Nexus Repository</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
+		</repository>
 
 	</repositories>
 
@@ -168,6 +169,19 @@
 			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
 		</pluginRepository>
 	</pluginRepositories>
+
+	<distributionManagement>
+		<repository>
+			<id>hugin-releases</id>
+			<name>hugin releases</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>hugin-snapshots</id>
+			<name>Hugin ISI MRP repository SNAPSHOTS</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencyManagement>
 
