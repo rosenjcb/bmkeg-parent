@@ -123,6 +123,14 @@
 			<name>sourceforge jsi repository</name>
 			<url>http://sourceforge.net/projects/jsi/files/m2_repo</url>
 		</repository>
+		
+		<!-- Luc Moreau's PROV repo -->
+
+		<repository>
+			<id>openprovenance</id>
+			<name>The Open Provenance Standard toolkit</name>
+			<url>http://openprovenance.org/java/maven-releases/</url>
+		</repository>
 
 		<!-- BMKEG local repository at hugin.isi.edu -->
 
