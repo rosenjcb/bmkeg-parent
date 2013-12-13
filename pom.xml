@@ -7,9 +7,19 @@
 	<packaging>pom</packaging>
 	<name>bmkeg-parent</name>
 
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>0.5.0.BUILD-SNAPSHOT</version>
+	</parent>
+
 	<properties>
-		<spring.version>3.1.2.RELEASE</spring.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<spring.version>3.2.4.RELEASE</spring.version>
+		<spring.security.version>3.2.0.RC2</spring.security.version>
+		<tiles.version>3.0.1</tiles.version>
+ 		<slf4j.version>1.6.1</slf4j.version>
+ 		<log4j.version>1.2.17</log4j.version>
+ 		<thymeleaf.version>2.0.15</thymeleaf.version>
 		<spring-ws.version>2.0.0.RELEASE</spring-ws.version>
 		<spring-flex.version>1.5.2.RELEASE</spring-flex.version>
 		<blazeds.version>4.0.0.14931</blazeds.version>
@@ -88,9 +98,9 @@
 			Maven Central Artifacts can be searched at: http://search.maven.org. -->
 
 		<repository>
-			<id>com.springsource.repository.bundles.release</id>
-			<name>SpringSource Enterprise Bundle Repository - SpringSource Releases</name>
-			<url>http://repository.springsource.com/maven/bundles/release</url>
+			<id>spring.io.release</id>
+			<name>SpringIO Bundle Repository - Releases</name>
+			<url>http://repo.spring.io/release</url>
 		</repository>
 		<repository>
 			<id>com.springsource.repository.bundles.external</id>
@@ -98,14 +108,14 @@
 			<url>http://repository.springsource.com/maven/bundles/external</url>
 		</repository>
 		<repository>
-			<id>com.springsource.repository.bundles.milestone</id>
-			<name>SpringSource Enterprise Bundle Repository - SpringSource Milestones</name>
-			<url>http://repository.springsource.com/maven/bundles/milestone</url>
+			<id>spring.io.milestone</id>
+			<name>SpringIO Bundle Repository - Milestones</name>
+			<url>http://repo.spring.io/milestone</url>
 		</repository>
 		<repository>
-			<id>com.springsource.repository.bundles.snapshot</id>
-			<name>SpringSource Enterprise Bundle Repository - Snapshot Releases</name>
-			<url>http://repository.springsource.com/maven/bundles/snapshot</url>
+			<id>spring.io.snapshot</id>
+			<name>SpringIO Bundle Repository - Snapshots</name>
+			<url>http://repo.spring.io/snapshot</url>
 		</repository>
 
 		<!-- JBoss Repository -->
@@ -123,7 +133,7 @@
 			<name>sourceforge jsi repository</name>
 			<url>http://sourceforge.net/projects/jsi/files/m2_repo</url>
 		</repository>
-		
+
 		<!-- Luc Moreau's PROV repo -->
 
 		<repository>
@@ -224,6 +234,24 @@
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfGenerator</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmfSystem-jpa</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmfSystem-services</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmfSpring</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
@@ -328,6 +356,12 @@
 				<artifactId>ftd-jpa</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>ftd-services</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
@@ -392,28 +426,6 @@
 				<artifactId>triageClientApp</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 				<type>swf</type>
-				<exclusions>
-					<exclusion>
-						<artifactId>flex-framework</artifactId>
-						<groupId>com.adobe.flex.framework</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>playerglobal</artifactId>
-						<groupId>com.adobe.flex.framework</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>triageClientComponents</artifactId>
-						<groupId>edu.isi.bmkeg</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>robotlegs-framework</artifactId>
-						<groupId>org.robotlegs</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>robotlegs-utilities-Modular</artifactId>
-						<groupId>org.robotlegs</groupId>
-					</exclusion>
-				</exclusions>
 			</dependency>
 
 			<!-- Spring -->
@@ -456,25 +468,25 @@
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-web</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.security.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-core</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.security.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-config</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.security.version}</version>
 			</dependency>
 
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-taglibs</artifactId>
-				<version>${spring.version}</version>
+				<version>${spring.security.version}</version>
 			</dependency>
 
 			<dependency>
@@ -483,6 +495,11 @@
 				<version>${spring.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+			</dependency>
 
 			<!-- Spring Flex -->
 
