@@ -14,8 +14,13 @@
 		<spring.version>3.2.4.RELEASE</spring.version>
 		<spring.security.version>3.2.0.RC2</spring.security.version>
 		<tiles.version>3.0.1</tiles.version>
-		<slf4j.version>1.6.1</slf4j.version>
+
+		<!-- Note that setting the slf4j version higher than 1.5.5 leads to IllegalAccessError 
+			exceptions -->
+		<slf4j.version>1.7.5</slf4j.version>
+		<trove.version>3.0.3</trove.version>
 		<log4j.version>1.2.17</log4j.version>
+
 		<thymeleaf.version>2.0.15</thymeleaf.version>
 		<spring-ws.version>2.0.0.RELEASE</spring-ws.version>
 		<spring-flex.version>1.5.2.RELEASE</spring-flex.version>
@@ -331,7 +336,7 @@
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>lapdftext</artifactId>
-				<version>1.7.3-SNAPSHOT</version>
+				<version>1.7.4-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
@@ -417,7 +422,7 @@
 				<artifactId>skmTriage</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>digitalLibraryClientApp</artifactId>
@@ -445,13 +450,13 @@
 				<version>1.1.5-SNAPSHOT</version>
 				<type>swf</type>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>triageClientComponents</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
-			
+
 			<!-- Spring -->
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -529,6 +534,12 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+			    <groupId>javax.persistence</groupId>
+			    <artifactId>com.springsource.javax.persistence</artifactId>
+			    <version>2.0.0</version>
 			</dependency>
 
 			<dependency>
@@ -776,12 +787,26 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.1</version>
 			</dependency>
+
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<type>jar</type>
 				<version>1.2.13</version>
 			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.5</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>net.sf.trove4j</groupId>
+				<artifactId>trove4j</artifactId>
+				<version>3.0.3</version>
+				<scope>compile</scope>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
