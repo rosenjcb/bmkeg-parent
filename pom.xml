@@ -168,7 +168,7 @@
 		<repository>
 			<id>hugin-3rd-party-snapshot</id>
 			<name>Hugin Third Party Nexus Repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdpartysnapshots/</url>
 		</repository>
 		
 		<repository>
