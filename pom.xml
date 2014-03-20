@@ -23,6 +23,7 @@
 
 		<thymeleaf.version>2.0.15</thymeleaf.version>
 		<spring-ws.version>2.0.0.RELEASE</spring-ws.version>
+		<cleartk.version>2.0.0-SNAPSHOT</cleartk.version>
 		<spring-flex.version>1.5.2.RELEASE</spring-flex.version>
 		<blazeds.version>4.0.0.14931</blazeds.version>
 		<flexmojos.version>4.2-beta</flexmojos.version>
@@ -347,7 +348,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ftd</artifactId>
+				<artifactId>vpdmf-ftd</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -355,7 +356,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ftd-jpa</artifactId>
+				<artifactId>vpdmf-ftd-jpa</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
@@ -367,7 +368,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>digitalLibrary</artifactId>
+				<artifactId>vpdmf-digitalLibrary</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -375,13 +376,13 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>digitalLibrary-jpa</artifactId>
+				<artifactId>vpdmf-digitalLibrary-jpa</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>digitalLibrary-services</artifactId>
+				<artifactId>vpdmf-digitalLibrary-services</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
@@ -393,7 +394,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>triage</artifactId>
+				<artifactId>vpdmf-triage</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -401,13 +402,13 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>triage-jpa</artifactId>
+				<artifactId>vpdmf-triage-jpa</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>triage-services</artifactId>
+				<artifactId>vpdmf-triage-services</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
@@ -650,132 +651,152 @@
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-type-system</artifactId>
-				<version>1.1.0</version>
+				<version>${cleartk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.cleartk</groupId>
+				<artifactId>cleartk-feature</artifactId>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-test-util</artifactId>
-				<version>1.2.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-util</artifactId>
-				<version>0.9.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-eval</artifactId>
-				<version>0.9.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml</artifactId>
-				<version>1.2.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-opennlp-maxent</artifactId>
-				<version>1.1.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-svmlight</artifactId>
-				<version>1.1.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-tksvmlight</artifactId>
-				<version>0.4.1</version>
+				<version>${cleartk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.cleartk</groupId>
+				<artifactId>cleartk-corpus</artifactId>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-libsvm</artifactId>
-				<version>1.1.1</version>
+				<version>${cleartk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.cleartk</groupId>
+				<artifactId>cleartk-ml-liblinear</artifactId>
+				<version>${cleartk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.cleartk</groupId>
+				<artifactId>cleartk-ml-tksvmlight</artifactId>
+				<version>${cleartk.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.cleartk</groupId>
+				<artifactId>cleartk-ml-tksvmlight</artifactId>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-mallet</artifactId>
-				<version>1.2.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-crfsuite</artifactId>
-				<version>0.2.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-weka</artifactId>
-				<version>0.1.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-token</artifactId>
-				<version>0.8.6</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-named-entity</artifactId>
-				<version>0.6.5</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-syntax</artifactId>
-				<version>0.6.3</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-opennlp-tools</artifactId>
-				<version>0.10.2</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-berkeleyparser</artifactId>
-				<version>0.2.2</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-clearnlp</artifactId>
-				<version>0.5.0</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-clearparser</artifactId>
-				<version>0.7.2</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-maltparser</artifactId>
-				<version>0.8.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-stanford-corenlp</artifactId>
-				<version>0.7.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-semantic-roles</artifactId>
-				<version>0.6.3</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-snowball</artifactId>
-				<version>0.9.2</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-summarization</artifactId>
-				<version>0.0.1</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-timeml</artifactId>
-				<version>1.0.3</version>
-			</dependency>
-			<dependency>
-				<groupId>org.cleartk</groupId>
-				<artifactId>cleartk-examples</artifactId>
-				<version>0.6.3</version>
+				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -798,12 +819,6 @@
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>1.7.5</version>
-				<scope>compile</scope>
-			</dependency>
-			<dependency>
-				<groupId>net.sf.trove4j</groupId>
-				<artifactId>trove4j</artifactId>
-				<version>3.0.3</version>
 				<scope>compile</scope>
 			</dependency>
 
