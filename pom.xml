@@ -39,8 +39,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>2.3.2</version>
 					<configuration>
-						<source>1.6</source>
-						<target>1.6</target>
+						<source>1.7</source>
+						<target>1.7</target>
 					</configuration>
 				</plugin>
 			</plugins>
@@ -180,16 +180,19 @@
 	</repositories>
 
 	<pluginRepositories>
+	
 		<pluginRepository>
-			<id>flex-mojos-repository</id>
-			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+			<id>oss.sonatype.org</id>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
+			<name>FlexPMD repository on opensource.adobe.com</name>
+			<url>http://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
+	
 		<pluginRepository>
 			<id>flexpmd.opensource.adobe</id>
 			<releases>
@@ -201,8 +204,20 @@
 			<name>FlexPMD repository on opensource.adobe.com</name>
 			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
 		</pluginRepository>
+	
+		<pluginRepository>
+			<id>Maven Central</id>
+			<url>http://central.maven.org/maven2/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	
 	</pluginRepositories>
-
+	
 	<distributionManagement>
 		<repository>
 			<id>hugin-releases</id>
@@ -712,11 +727,6 @@
 			<dependency>
 				<groupId>org.cleartk</groupId>
 				<artifactId>cleartk-ml-liblinear</artifactId>
-				<version>${cleartk.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.cleartk</groupId>
-				<artifactId>cleartk-ml-tksvmlight</artifactId>
 				<version>${cleartk.version}</version>
 			</dependency>
 			<dependency>
