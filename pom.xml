@@ -170,7 +170,7 @@
 			<name>Hugin Third Party Nexus Repository</name>
 			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdpartysnapshots/</url>
 		</repository>
-		
+
 		<repository>
 			<id>maven-central</id>
 			<name>maven</name>
@@ -180,7 +180,7 @@
 	</repositories>
 
 	<pluginRepositories>
-	
+
 		<pluginRepository>
 			<id>oss.sonatype.org</id>
 			<releases>
@@ -192,7 +192,7 @@
 			<name>FlexPMD repository on opensource.adobe.com</name>
 			<url>http://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
-	
+
 		<pluginRepository>
 			<id>flexpmd.opensource.adobe</id>
 			<releases>
@@ -204,7 +204,7 @@
 			<name>FlexPMD repository on opensource.adobe.com</name>
 			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
 		</pluginRepository>
-	
+
 		<pluginRepository>
 			<id>Maven Central</id>
 			<url>http://central.maven.org/maven2/</url>
@@ -215,9 +215,9 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-	
+
 	</pluginRepositories>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>hugin-releases</id>
@@ -559,9 +559,9 @@
 			</dependency>
 
 			<dependency>
-			    <groupId>javax.persistence</groupId>
-			    <artifactId>com.springsource.javax.persistence</artifactId>
-			    <version>2.0.0</version>
+				<groupId>javax.persistence</groupId>
+				<artifactId>com.springsource.javax.persistence</artifactId>
+				<version>2.0.0</version>
 			</dependency>
 
 			<dependency>
@@ -814,13 +814,13 @@
 				<artifactId>cleartk-timeml</artifactId>
 				<version>${cleartk.version}</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>1.3.2</version>
 			</dependency>
-			
+
 			<dependency>
 				<groupId>commons-net</groupId>
 				<artifactId>commons-net</artifactId>
@@ -833,13 +833,6 @@
 				<type>jar</type>
 				<version>1.2.13</version>
 			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>1.7.5</version>
-				<scope>compile</scope>
-			</dependency>
-
 		</dependencies>
 
 	</dependencyManagement>
@@ -852,6 +845,11 @@
 			<version>4.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 </project>
