@@ -283,7 +283,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ooevv</artifactId>
+				<artifactId>vpdmf-ooevv</artifactId>
 				<version>0.0.9-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -291,13 +291,13 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ooevv-jpa</artifactId>
+				<artifactId>vpdmf-ooevv-jpa</artifactId>
 				<version>0.0.9-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ooevv-services</artifactId>
+				<artifactId>vpdmf-ooevv-services</artifactId>
 				<version>0.0.9-SNAPSHOT</version>
 			</dependency>
 
@@ -309,7 +309,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>kefed</artifactId>
+				<artifactId>vpdmf-kefed</artifactId>
 				<version>0.0.3-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -317,13 +317,13 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>kefed-jpa</artifactId>
+				<artifactId>vpdmf-kefed-jpa</artifactId>
 				<version>0.0.3-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>kefed-services</artifactId>
+				<artifactId>vpdmf-kefed-services</artifactId>
 				<version>0.0.3-SNAPSHOT</version>
 			</dependency>
 
@@ -335,7 +335,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>cosi</artifactId>
+				<artifactId>vpdmf-cosi</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
@@ -343,13 +343,13 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>cosi-jpa</artifactId>
+				<artifactId>vpdmf-cosi-jpa</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>cosi-services</artifactId>
+				<artifactId>vpdmf-cosi-services</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
@@ -383,7 +383,7 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
-				<artifactId>ftd-services</artifactId>
+				<artifactId>vpdmf-ftd-services</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
