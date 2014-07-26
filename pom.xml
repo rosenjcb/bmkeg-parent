@@ -177,12 +177,12 @@
 			<url>http://central.maven.org/maven2/</url>
 		</repository>
 
-		<!-- Hack to fix the BlazeDS versioning problem -->
+		<!-- Hack to fix the BlazeDS versioning problem 
 		<repository>
 			<id>SpringFlex</id>
 			<name>SpringFlex Source Repo</name>
 			<url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url>
-		</repository>
+		</repository>-->
 
 	</repositories>
 
