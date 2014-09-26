@@ -120,6 +120,13 @@
 			<name>SpringIO Bundle Repository - Snapshots</name>
 			<url>http://repo.spring.io/snapshot</url>
 		</repository>
+		
+		<!-- BigData Repository -->
+		
+		<repository>
+			<id>bigdata.releases</id>
+		   <url>http://www.systap.com/maven/releases</url>
+ 		</repository>
 
 		<!-- JBoss Repository -->
 
@@ -241,7 +248,7 @@
 	<dependencyManagement>
 
 		<dependencies>
-
+		
 			<!-- BMKEG -->
 
 			<dependency>
@@ -270,6 +277,12 @@
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmfBigData</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfSystem-jpa</artifactId>
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
@@ -291,7 +304,7 @@
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmf-ooevv</artifactId>
-				<version>0.0.9-SNAPSHOT</version>
+				<version>0.0.10-SNAPSHOT</version>
 				<type>zip</type>
 				<classifier>mysql</classifier>
 			</dependency>
@@ -299,13 +312,13 @@
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmf-ooevv-jpa</artifactId>
-				<version>0.0.9-SNAPSHOT</version>
+				<version>0.0.10-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmf-ooevv-services</artifactId>
-				<version>0.0.9-SNAPSHOT</version>
+				<version>0.0.10-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
@@ -841,6 +854,24 @@
 				<artifactId>cleartk-timeml</artifactId>
 				<version>${cleartk.version}</version>
 			</dependency>
+			
+			<!-- BigData -->
+
+			<dependency>
+				<groupId>com.bigdata</groupId>
+				<artifactId>bigdata</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+			
+			<!-- OwlAPI -->
+			
+			<dependency>
+				<groupId>org.semanticweb.owlapi</groupId>
+				<artifactId>owlApi</artifactId>
+				<version>3.1.0</version>
+			</dependency>
+			
+			<!-- Apache -->
 
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -854,12 +885,23 @@
 				<version>3.3</version>
 			</dependency>
 
+			<!-- Testing, Logging, etc. -->
+
 			<dependency>
 				<groupId>log4j</groupId>
 				<artifactId>log4j</artifactId>
 				<type>jar</type>
 				<version>1.2.13</version>
 			</dependency>
+						
+			<!-- Testing, Logging, etc. -->
+			<dependency>
+				<groupId>org.jgrapht</groupId>
+				<artifactId>jgrapht-jdk1.6</artifactId>
+				<version>0.8.2</version>
+				<type>jar</type>
+			</dependency>
+			
 		</dependencies>
 
 	</dependencyManagement>
