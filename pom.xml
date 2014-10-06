@@ -894,7 +894,7 @@
 				<version>1.2.13</version>
 			</dependency>
 						
-			<!-- Testing, Logging, etc. -->
+			<!-- Data analysis. -->
 			<dependency>
 				<groupId>org.jgrapht</groupId>
 				<artifactId>jgrapht-jdk1.6</artifactId>
