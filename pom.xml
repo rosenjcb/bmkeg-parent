@@ -203,11 +203,11 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-			<name>FlexPMD repository on opensource.adobe.com</name>
+			<name>Sonatype plugin snaphots</name>
 			<url>http://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
 
-		<pluginRepository>
+<!-- 		<pluginRepository>
 			<id>flexpmd.opensource.adobe</id>
 			<releases>
 				<enabled>true</enabled>
@@ -217,7 +217,7 @@
 			</snapshots>
 			<name>FlexPMD repository on opensource.adobe.com</name>
 			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
-		</pluginRepository>
+		</pluginRepository> -->
 
 		<pluginRepository>
 			<id>Maven Central</id>
