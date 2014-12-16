@@ -120,13 +120,13 @@
 			<name>SpringIO Bundle Repository - Snapshots</name>
 			<url>http://repo.spring.io/snapshot</url>
 		</repository>
-		
+
 		<!-- BigData Repository -->
-		
+
 		<repository>
 			<id>bigdata.releases</id>
-		   <url>http://www.systap.com/maven/releases</url>
- 		</repository>
+			<url>http://www.systap.com/maven/releases</url>
+		</repository>
 
 		<!-- JBoss Repository -->
 
@@ -184,12 +184,9 @@
 			<url>http://central.maven.org/maven2/</url>
 		</repository>
 
-		<!-- Hack to fix the BlazeDS versioning problem 
-		<repository>
-			<id>SpringFlex</id>
-			<name>SpringFlex Source Repo</name>
-			<url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url>
-		</repository>-->
+		<!-- Hack to fix the BlazeDS versioning problem <repository> <id>SpringFlex</id> 
+			<name>SpringFlex Source Repo</name> <url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url> 
+			</repository> -->
 
 	</repositories>
 
@@ -207,17 +204,10 @@
 			<url>http://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
 
-<!-- 		<pluginRepository>
-			<id>flexpmd.opensource.adobe</id>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<name>FlexPMD repository on opensource.adobe.com</name>
-			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
-		</pluginRepository> -->
+		<!-- <pluginRepository> <id>flexpmd.opensource.adobe</id> <releases> <enabled>true</enabled> 
+			</releases> <snapshots> <enabled>false</enabled> </snapshots> <name>FlexPMD 
+			repository on opensource.adobe.com</name> <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url> 
+			</pluginRepository> -->
 
 		<pluginRepository>
 			<id>Maven Central</id>
@@ -248,7 +238,7 @@
 	<dependencyManagement>
 
 		<dependencies>
-		
+
 			<!-- BMKEG -->
 
 			<dependency>
@@ -875,7 +865,7 @@
 				<artifactId>cleartk-timeml</artifactId>
 				<version>${cleartk.version}</version>
 			</dependency>
-			
+
 			<!-- BigData -->
 
 			<dependency>
@@ -883,15 +873,15 @@
 				<artifactId>bigdata</artifactId>
 				<version>1.3.1</version>
 			</dependency>
-			
+
 			<!-- OwlAPI -->
-			
+
 			<dependency>
 				<groupId>org.semanticweb.owlapi</groupId>
 				<artifactId>owlApi</artifactId>
 				<version>3.1.0</version>
 			</dependency>
-			
+
 			<!-- Apache -->
 
 			<dependency>
@@ -914,7 +904,7 @@
 				<type>jar</type>
 				<version>1.2.13</version>
 			</dependency>
-						
+
 			<!-- Data analysis. -->
 			<dependency>
 				<groupId>org.jgrapht</groupId>
@@ -922,7 +912,15 @@
 				<version>0.8.2</version>
 				<type>jar</type>
 			</dependency>
-			
+
+			<!-- SOLR LIBRARIES -->
+			<dependency>
+				<groupId>org.apache.solr</groupId>
+				<artifactId>solr-solrj</artifactId>
+				<version>4.9.1</version>
+				<type>jar</type>
+			</dependency>
+
 		</dependencies>
 
 	</dependencyManagement>
