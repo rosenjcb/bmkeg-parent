@@ -29,6 +29,7 @@
 		<flexmojos.version>4.2-beta</flexmojos.version>
 		<flex.version>4.5.0.20967</flex.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<paxtools.version>4.3.1-SNAPSHOT</paxtools.version>
 	</properties>
 
 	<build>
