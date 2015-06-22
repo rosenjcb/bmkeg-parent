@@ -290,6 +290,35 @@
 				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
+			<!-- Big Mechanisms Projects -->
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>friesWorkbenchClientApp</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+				<type>swf</type>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmf-bigMechIndexCards</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+				<type>zip</type>
+				<classifier>mysql</classifier>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmf-bigMechIndexCards-jpa</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>edu.isi.bmkeg</groupId>
+				<artifactId>vpdmf-bigMechIndexCards-services</artifactId>
+				<version>1.1.5-SNAPSHOT</version>
+			</dependency>
+
 			<!-- ooevv, kefed, cosi -->
 
 			<dependency>
