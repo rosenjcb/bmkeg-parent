@@ -239,13 +239,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>isi-releases</id>
+			<id>isi.nexus.server.releases</id>
 			<name>ISI releases</name>
 			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>isi-snapshots</id>
-			<name>Hugin ISI MRP repository SNAPSHOTS</name>
+			<id>isi.nexus.server.snapshots</id>
+			<name>ISI MRP repository SNAPSHOTS</name>
 			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
@@ -259,7 +259,7 @@
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>bmkeg-utils</artifactId>
-				<version>1.1.5-SNAPSHOT</version>
+				<version>1.2.0-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
