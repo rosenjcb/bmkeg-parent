@@ -153,31 +153,44 @@
 			<url>http://openprovenance.org/java/maven-releases/</url>
 		</repository>
 
-		<!-- BMKEG local repository at hugin.isi.edu -->
+		<!-- BMKEG local repository at ettin.isi.edu -->
 
 		<repository>
-			<id>hugin-snapshots</id>
-			<name>Hugin ISI MRP repository SNAPSHOTS</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
+			<id>ettin-snapshots</id>
+			<name>Ettin ISI MRP repository SNAPSHOTS</name>
+			<url>http://ettin.isi.edu:8081/nexus/content/repositories/snapshots/</url>
 		</repository>
 
 		<repository>
-			<id>hugin-releases</id>
-			<name>Hugin ISI MRP repository RELEASES</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
+			<id>ettin-releases</id>
+			<name>Ettin ISI MRP repository RELEASES</name>
+			<url>http://ettin.isi.edu:8081/nexus/content/repositories/releases/</url>
 		</repository>
 
 		<repository>
-			<id>hugin-3rd-party</id>
-			<name>Hugin Third Party Nexus Repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
+			<id>ettin-3rd-party</id>
+			<name>Ettin Third Party Nexus Repository</name>
+			<url>http://ettin.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
 		</repository>
 
+		<!-- ISI repositories at ettin.isi.edu -->
 		<repository>
-			<id>hugin-3rd-party-snapshot</id>
-			<name>Hugin Third Party Nexus Repository</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdpartysnapshots/</url>
-		</repository>
+			<id>isi.nexus.server.thirdparty</id>
+			<name>ISI Third Party Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
+		</repository>	
+
+		<repository>
+			<id>isi.nexus.server.snapshots</id>
+			<name>ISI Snapshots Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
+		</repository>	
+
+		<repository>
+			<id>isi.nexus.server</id>
+			<name>ISI Snapshots Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/public/</url>
+		</repository>	
 
 		<repository>
 			<id>maven-central</id>
@@ -229,16 +242,16 @@
 
 	</pluginRepositories>
 
-	<distributionManagement>
+		<distributionManagement>
 		<repository>
-			<id>hugin-releases</id>
-			<name>hugin releases</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
+			<id>isi.nexus.server.releases</id>
+			<name>ISI releases</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>hugin-snapshots</id>
-			<name>Hugin ISI MRP repository SNAPSHOTS</name>
-			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
+			<id>isi.nexus.server.snapshots</id>
+			<name>ISI MRP repository SNAPSHOTS</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
