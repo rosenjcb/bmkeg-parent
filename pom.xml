@@ -148,7 +148,7 @@
 			<url>http://openprovenance.org/java/maven-releases/</url>
 		</repository>
 
-		<!-- BMKEG local repository at ettin.isi.edu -->
+		<!-- BMKEG local repository at ettin.isi.edu 
 
 		<repository>
 			<id>ettin-snapshots</id>
@@ -166,7 +166,7 @@
 			<id>ettin-3rd-party</id>
 			<name>Ettin Third Party Nexus Repository</name>
 			<url>http://ettin.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
-		</repository>
+		</repository> -->
 
 		<!-- ISI repositories at ettin.isi.edu -->
 		<repository>
