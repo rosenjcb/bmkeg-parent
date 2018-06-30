@@ -106,11 +106,7 @@
 			<name>SpringIO Bundle Repository - Releases</name>
 			<url>http://repo.spring.io/release</url>
 		</repository>
-		<repository>
-			<id>com.springsource.repository.bundles.external</id>
-			<name>SpringSource Enterprise Bundle Repository - External Releases</name>
-			<url>http://repository.springsource.com/maven/bundles/external</url>
-		</repository>
+
 		<repository>
 			<id>spring.io.milestone</id>
 			<name>SpringIO Bundle Repository - Milestones</name>
@@ -120,13 +116,6 @@
 			<id>spring.io.snapshot</id>
 			<name>SpringIO Bundle Repository - Snapshots</name>
 			<url>http://repo.spring.io/snapshot</url>
-		</repository>
-
-		<!-- BigData Repository -->
-
-		<repository>
-			<id>bigdata.releases</id>
-			<url>http://www.systap.com/maven/releases</url>
 		</repository>
 
 		<!-- JBoss Repository -->
@@ -202,16 +191,6 @@
 			<id>maven-central</id>
 			<name>maven</name>
 			<url>http://central.maven.org/maven2/</url>
-		</repository>
-
-		<!-- Hack to fix the BlazeDS versioning problem <repository> <id>SpringFlex</id> 
-			<name>SpringFlex Source Repo</name> <url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url> 
-			</repository> -->
-
-		<repository>
-			<id>biopax-releases</id>
-			<name>biopax</name>
-			<url>http://www.biopax.org/m2repo/releases/</url>
 		</repository>
 
 	</repositories>
