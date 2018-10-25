@@ -119,11 +119,6 @@
 
 		<!-- BigData Repository -->
 
-		<repository>
-			<id>bigdata.releases</id>
-			<url>http://www.systap.com/maven/releases</url>
-		</repository>
-
 		<!-- JBoss Repository -->
 
 		<repository>
